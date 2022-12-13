@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun May  8 21:01:15 2022
+Created on Sun May 22 11:53:51 2022
 
 @author: kaustubh
 """
@@ -14,7 +14,7 @@ from streamlit_option_menu import option_menu
 
 diabetes_model = pickle.load(open('diabetes_model.sav', 'rb'))
 
-heart_disease_model = pickle.load(open('heart_disease_model.sav', 'rb'))
+heart_disease_model = pickle.load(open('heart_disease_model.sav','rb'))
 
 parkinsons_model = pickle.load(open('parkinsons_model.sav', 'rb'))
 
@@ -27,8 +27,9 @@ with st.sidebar:
                           
                           ['Diabetes Prediction',
                            'Heart Disease Prediction',
-                           'Parkinsons Prediction'],
-                          icons=['activity','heart','person'],
+                           'Parkinsons Prediction',
+                           'Breast Cancer Prediction'],
+                          icons=['activity','heart','person','bootstrap'],
                           default_index=0)
     
     
@@ -242,11 +243,11 @@ if (selected == "Parkinsons Prediction"):
           parkinsons_diagnosis = "The person does not have Parkinson's disease"
         
     st.success(parkinsons_diagnosis)
+  
     
+  
     
-    
-    
-    # Breast Cancer Prediction Page
+# Breast Cancer Prediction Page
 if (selected == 'Breast Cancer Prediction'):
     
     # page title
@@ -359,6 +360,9 @@ if (selected == 'Breast Cancer Prediction'):
           breast_cancer_diagnosis = "The person has Malignant Breast Disease"
         
     st.success(breast_cancer_diagnosis)
+
+
+
 
 
 
